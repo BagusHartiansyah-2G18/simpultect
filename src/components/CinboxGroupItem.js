@@ -17,7 +17,7 @@ function InboxGroupItem({
       <div className="itemGroup">
         <div className="icon">
           {
-            participants == 1
+            participants === 1
               ? (
                 <button type="button" className="bprimary oneIcon">
                   <b className="icons">{endChat.name.substring(0, 1)}</b>

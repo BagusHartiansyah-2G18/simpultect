@@ -5,7 +5,7 @@
 /* eslint-disable no-empty */
 /* eslint-disable react/forbid-prop-types */
 import React, { useState } from 'react';
-import PropTypes, { array } from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   BsChevronCompactUp, BsChevronCompactDown, BsReception0, BsPencil,
   BsBookmarks,
@@ -28,6 +28,8 @@ function TaskItem({
   const toggleContent = () => {
     setopen(!open);
   };
+
+  const selected = [dtgroup[Math.floor(Math.random() * (8 - 1) + 1)]];
   return (
     <div className="containerTaskList">
       <div className="headers">
@@ -71,7 +73,7 @@ function TaskItem({
         <div>
           <div className="dropdown">
             <div className="itemGroupSelected">
-              no bookmarks
+              <ListGroup dtgroup={selected} setgroup={setdgroup} select />
             </div>
             <div className="dropdown-content">
               <ListGroup dtgroup={dgroup} setgroup={setdgroup} select />
